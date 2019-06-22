@@ -1,0 +1,68 @@
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+<head>
+    <meta name="viewportbrowser" content="width=device-width, initial-scale=1">
+    <style>
+      ul, #myUL {
+        list-style-type: none;
+      }
+      #myUL {
+        margin: 0;
+        padding: 0;
+      }
+      .caret {
+        cursor: pointer;
+        -webkit-user-select: none; /* Safari 3.1+ */
+        -moz-user-select: none; /* Firefox 2+ */
+        -ms-user-select: none; /* IE 10+ */
+        user-select: none;
+      }
+      .caret::before {
+        content: "\25B6";
+        color: black;
+        display: inline-block;
+        margin-right: 3px;
+      }
+      .caret-down::before {
+        -ms-transform: rotate(90deg); /* IE 9 */
+        -webkit-transform: rotate(90deg); /* Safari */
+        transform: rotate(90deg);
+      }
+      .nested {
+        display:none;
+      }
+      .active {
+        display:block;
+      }
+      .bodied {
+        background-color: salmon;
+        border-width: 2px;
+        border-color: black;
+        border-style: solid;
+      }
+      .button {
+        background-color: tomato;
+        border-width: 2px;
+        border-color: black;
+        border-style: solid;
+        margin-left: 6px;
+        margin-bottom: 6px;
+        cursor: pointer;
+      }
+      .browser{
+        margin-left:-20px;
+      }
+    </style>
+</head>
+
+<body class="bodied">
+  <h3>Building specification</h3>
+  <button class="button" (click)="openall(nodes)">open all</button>
+  <button class="button" (click)="closeall(nodes)">close all</button>
+  <button class="button" [style.background-color]="refreshed ? 'green' : 'red'" (click)="refresh()">refresh</button>
+  <div class="browser">
+    <app-recursivebrowser></app-recursivebrowser>
+  </div>
+  
+  
+</body>
+

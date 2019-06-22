@@ -1,0 +1,127 @@
+<style>
+
+
+.picture {
+  float: left;
+  border-style: solid;
+  border-width: 2px;
+  border-color: black;
+}
+
+.userinfo{
+  float:left;
+  border-style: solid;
+  border-width: 2px;
+  border-color: black;
+  background-color: salmon;
+  padding: 10px;
+  font-family: arial, sans-serif;
+}
+.roleinfo{
+  width: 20.5%;
+  float:left;
+  border-style: solid;
+  border-width: 2px;
+  border-color: black;
+  background-color: salmon;
+  padding: 10px;
+  font-family: arial, sans-serif;
+}
+.textinfo{
+  border-collapse: collapse;
+  font-family: arial, sans-serif;
+}
+td,th{
+  border-style: solid;
+  border-width: 1px;
+  border-color: gray;
+  background-color:white;
+  text-align: left;
+  min-width: 120px;
+}
+.sectionclass{
+  width:23%;
+  float:left;
+}
+.sectionpicture{
+  width: 20.5%;
+  float:left;
+  border-style: solid;
+  border-width: 2px;
+  border-color: black;
+  background-color: salmon;
+  padding: 10px;
+}
+
+</style>
+
+<body>
+  <section class="sectionpicture">
+      <div class="picture">
+        <img src="{{currentuser.picture}}" alt="User picture" style="width:300px;height:300px;border:0;"/>
+      </div>
+      <br>
+      <div class="userinfo">
+        <table class="textinfo">
+          <caption><b>User details</b></caption>
+          <tr>
+            <th>User ID:</th>
+            <th>{{currentuser.id}}</th><!---later user.id-->
+          </tr>
+          <tr>
+            <th>Username:</th>
+            <th>{{currentuser.username}}</th><!---later user.id-->
+          </tr>
+          <tr>
+            <th>Role:</th>
+            <th>{{currentuser.role}}<img src="../assets/images/info.png" style="width:15px;height:15px;border:0;"></th><!---later user.role-->
+          </tr>
+          <tr>
+            <th>E-mail:</th>
+            <th>useremail</th><!---later user.contact-->
+          </tr>
+          <tr>
+            <th>Languages:</th>
+            <th>userlanguage</th><!---later user.language-->
+          </tr>
+        </table>
+      </div>
+  </section>
+  <section class="roleinfo" style="margin-left: 20px">
+    <p style="text-align:center"><b>Role Permissions</b><br>Administrator</p><br><!---later user.role-->
+    <div style="font-size:12px">
+      This role has no rules at the moment. It can do everything for development purposes.<br><br>Later the admin will be able to 
+      modify userlists and change sensitive data about these users.
+      <br><br>
+      The role of administrator is that of quality control of the articles inside the building specification. If the size of the company doesn't allow 
+      to have a person devoted to this task, everyone can be assigned the role of administrator. 
+    </div>
+  </section>
+  <section class="sectionclass" style="margin-left: 20px">
+      <div class="userinfo">
+          <table class="textinfo">
+            <Caption><b>Comments</b></Caption>
+            <tr>
+              <th>Date:</th>
+              <th>Article:</th>
+              <!---here we loop through articles and search for comments made by this user and make a ngfor that depicts all comments in this table-->
+            </tr>
+          </table>
+        </div>
+  </section>
+  <section class="sectionclass"style="margin-left: 20px">
+      <div class="userinfo">
+        <table class="textinfo">
+          <Caption><b>Edited Articles</b></Caption>
+          <tr>
+            <th>Date:</th>
+            <th>Article:</th>
+            <!---here we loop through articles and search for temporary versions made by this user and make a ngfor that depicts all comments in this table-->
+          </tr>
+        </table>
+      </div>
+    </section>
+  <section class="sectionclass">
+      
+  </section>
+</body>

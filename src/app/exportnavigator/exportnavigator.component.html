@@ -1,0 +1,89 @@
+<style>
+  body {
+    float: left;
+  }
+  
+  .navbar{
+    width: 1150px;
+    margin-left:20px;
+    background-color: Salmon;
+    height: 100px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+  }
+  
+  .specificationinfo{
+    margin-left: 4px;
+    margin-top: 4px;
+    text-align: left;
+    font-family: arial, sans-serif;
+    font-size:14px;
+    width: 40%;
+    float:left;
+  }
+  .textinfo{
+    border-collapse: collapse;
+    font-family: arial, sans-serif;
+  }
+  td,th{
+    border-style: solid;
+    border-width: 1px;
+    border-color: gray;
+    background-color:white;
+    text-align: left;
+    min-width: 100px;
+  }
+  .secondth{
+    text-align: center;
+  }
+  .button{
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    background-color: Salmon;
+    text-align:center;
+    padding: 4px;
+    margin-right: 5px;
+    margin-top: 5px;
+    width:90%;
+  }
+  .buttons{
+    width: 20%;
+    float:right;
+  }
+</style>
+
+<body>
+  <nav class="navbar">
+    <section class="specificationinfo">
+      <table>
+        <tr>
+          <th>Total articles in PLB</th>
+          <th class="secondth">{{plblength}}</th>
+        </tr>
+        <tr>
+          <th>Articles left out from MLB</th>
+          <th class="secondth">{{mlblength-plblength}}</th>
+        </tr>
+        <tr>
+          <th>Unfinished articles</th>
+          <th></th>
+        </tr>
+        <tr>
+          <th>Old articles</th>
+          <th></th>
+        </tr>
+      </table>
+    </section>
+    <section class="buttons">
+      <button class="button">
+        <b>Export</b>
+      </button>
+      <button class="button">
+        <b>Read</b>
+      </button>
+    </section>
+  </nav>
+</body>
+  

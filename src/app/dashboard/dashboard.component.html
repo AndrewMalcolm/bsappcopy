@@ -1,0 +1,150 @@
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    header {
+      background-color: orangered;
+      padding: 10px;
+      text-align: center;
+      font-size: 35px;
+      color: white;
+    }
+
+    nav {
+      padding: 0px;
+      background-color: tomato;
+      height: 100px;
+    }
+
+    .box {
+      width: 100%;
+      height: 180px;
+      background-color: tomato;
+    }
+
+    .home {
+      float:left;
+      width: 10%;
+      overflow:hidden;
+      
+    }
+
+    .lastenboekbutton {
+      float: left;
+      width: 200px;
+      overflow: hidden;
+    }
+
+    .browserbutton {
+      float:left;
+      margin-top: 10px;
+      width: 20%;
+      height: 565px;
+      overflow: auto;
+    }
+
+    .notification {
+      float: right;
+      width: 10%;
+      overflow:hidden;
+    }
+
+    article {
+      float: right;
+      padding: 0px;
+      width: 25%;
+      background-color: tomato;
+      height: 100px;
+    }
+
+    section:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    @media (max-width: 600px) {
+      nav, article {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    div {
+      height: 20px;
+      margin-left: 0px;
+      width:20%;
+    }
+
+    .fool {
+      position:absolute;
+      margin-top: -27px;
+    }
+    
+    .browserfool {
+      background-color: tomato;
+      border-width: 2px;
+      border-color: black;
+      border-style: solid;
+      margin-left: 6px;
+      margin-bottom: 6px;
+      width: 100%;
+      cursor: pointer;
+    }
+
+    .toshoworhide {
+      position:unset;
+    }
+
+  </style>
+</head>
+
+
+
+<body class="box">
+  <header>Building Specification App</header>
+  <section>
+    <nav class="home">
+      <app-dashboardhome></app-dashboardhome>
+    </nav>
+    <nav class="lastenboekbutton">
+      <app-dashboardplb></app-dashboardplb>
+    </nav>
+    <nav class="lastenboekbutton">
+      <app-dashboardmlb></app-dashboardmlb>
+    </nav>
+    <nav class="lastenboekbutton">
+      <app-dashboardnewarticle></app-dashboardnewarticle>
+    </nav>
+    <nav class="lastenboekbutton">
+      <app-dashboardmanager></app-dashboardmanager>
+    </nav>
+    <article>
+      <app-dashboardlogin></app-dashboardlogin>
+    </article>
+    <nav class="notification">
+      <app-dashboardnotification></app-dashboardnotification>
+    </nav>
+    
+  </section>
+  <section *ngIf="show">
+    <nav class="browserbutton">
+      <app-dashboardbrowser></app-dashboardbrowser>
+    </nav>
+  </section>
+</body>
+<div class="fool">
+  <button class="browserfool" (click)="hidebrowser()">{{buttonName}}</button>
+</div>
+
+
+

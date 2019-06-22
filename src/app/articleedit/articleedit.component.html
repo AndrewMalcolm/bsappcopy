@@ -1,0 +1,198 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+<style>
+  .container {
+      float:left;
+      background-color:Salmon;
+      border-style: solid;
+      border-width: 1px;
+      border-color:black;
+      width: 70%;
+      min-height: 500px;
+      margin-left: 30px;
+      padding:30px;
+  }
+  .column{
+    float:left;
+    background-color: white;
+  }
+  .detailbox{
+    float:left;
+  }
+  .detailbox2{
+    float:left;
+    width: 327px;
+    height: 261px;
+    background-color:Salmon;
+    border-style: solid;
+    border-width: 1px;
+    border-color:black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:16px;
+    text-align:center;
+  }
+  .button{
+    float: left;
+    padding: 5px;
+    margin-top: 4px;
+    background-color: salmon;
+    border-style: solid;
+    border-width: 1.5px;
+    border-color: black;
+    cursor: pointer;
+  }
+    .whitespace {
+      float:left;
+      background-color: white;
+      border-style: solid;
+      border-color: gray;
+      border-width: 1px;
+      width: 60%;
+      margin-left: 2%;
+      margin-top: 0%;
+      min-height: 200px;
+    }
+    .helper {
+      float:left;
+      background-color:Salmon;
+      border-style: solid;
+      border-width: 1px;
+      width: 100%;
+      min-height: 200px;
+      padding:20px;
+    }
+    td, th {
+    border: 1px solid gray;
+    text-align: left;
+    padding: 5px;
+    background-color: white;
+    font-size: 10px;
+    }
+    table{
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+    }
+    .articledetails{
+      position: relative;
+      top: 10px;
+      left: 10px;
+    }
+    .button2{
+      float: right;
+      padding: 5px;
+      margin-top: 4px;
+      background-color: salmon;
+      border-style: solid;
+      border-width: 1.5px;
+      border-color: black;
+      cursor: pointer;
+    }
+    .tooltipper{
+      float: left;
+      margin-top: 14px;
+      margin-left: 5%;
+    }
+    .tooltipper2{
+      float: left;
+      margin-top: 14px;
+      margin-left:20%;
+    }
+    .tooltipper .tooltip{
+      visibility: hidden;
+      background-color: #555;
+      color: #fff;
+      border-radius: 6px;
+      padding: 5px 0;
+      position: absolute;
+      z-index: 1;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .tooltipper:hover .tooltip{
+      visibility: visible;
+      opacity: 1;
+    }
+    .showforum{
+      float: left;
+      padding: 5px;
+      margin-top: 4px;
+      background-color: salmon;
+      border-style: solid;
+      border-width: 1.5px;
+      border-color: black;
+      width: 95%;
+      text-align: center;
+      font-size:8px;
+      cursor:pointer;
+    }
+</style>
+
+<body>
+  <nav class="container">
+    <nav class="column">
+        <app-ngx-editor [spellcheck]="true" [(ngModel)]="localdescription"></app-ngx-editor>
+    </nav>
+</nav>
+<nav style="position:relative; float: left;">
+<div class="helper">
+  <table class="articledetails">
+    <caption><b>Article Details</b></caption>
+    <tr>
+      <th width="10px">BSID</th>
+      <th width="140px"><input type="text" [(ngModel)]="localbsid"></th>
+    </tr>
+    <tr>
+      <th>Title</th>
+      <th><input type="text" [(ngModel)]="localtitle"></th>
+    </tr>
+    <tr>
+      <th>Language</th>
+      <th><input type="text" [(ngModel)]="locallanguage"></th>
+    </tr>
+    <tr>
+      <th>Progress</th>
+      <th><input type="text"></th>
+    </tr>
+    <tr>
+      <th>Original Author</th>
+      <th>{{article.creator}}</th>
+    </tr>
+    <tr>
+      <th>Type</th>
+      <th><input type="text" [(ngModel)]="localtype"></th>
+    </tr>
+    <tr>
+      <th>Version</th>
+      <th><input type="text" [(ngModel)]="localbestek"></th>
+    </tr>
+    <tr>
+      <th>Attachments</th>
+      <th><a href="">examplerevitfamily.rfa</a> <button class="button2" style="float:right;">+</button></th>
+    </tr>
+  </table>
+  <br>
+  <span class="showforum" (click)="showcomments()"><b>{{buttonname}}</b>
+    <!---dropdown component comments of the article here-->
+  </span>
+</div>
+<div *ngIf="opencommenteditor">
+  <app-commentinput [article]="this.article"></app-commentinput>
+</div>
+<div *ngIf="openforum">
+  <ul *ngFor="let comment of articlecomments">
+    <app-singlecomment [comment]="comment"></app-singlecomment>
+  </ul>
+</div>
+</nav>
+
+<div class="detailbox2">
+  <br>
+  <br>
+  <b>Add changelog</b><br>
+  <input type="text" style="width:90%;margin-left:3%;height:100px;" [(ngModel)]="localchangelog">
+  <nav class="button" style="margin-left:60px;margin-top:20px;" (click)="newrequest()" [style.background-color]="refreshed ? 'green' : 'red'">Save as new</nav>
+  <nav class="button" style="margin-top:20px;" (click)="updaterequest()" [style.background-color]="refreshed ? 'green' : 'red'">Save as edit</nav>
+</div>
+</body>
+
+
+

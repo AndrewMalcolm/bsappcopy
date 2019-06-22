@@ -1,0 +1,49 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+<style>
+  body{
+    position:relative;
+  }
+  .whitespace {
+    float:left;
+    background-color: white;
+    border-style: solid;
+    border-color: gray;
+    border-width: 1px;
+    width: 60%;
+    margin-left: 2%;
+    margin-top: 0%;
+    min-height: 220px;
+  }
+  .helper {
+    float:left;
+    background-color:Salmon;
+    border-style: solid;
+    border-width: 1px;
+    width: 17%;
+    min-height: 200px;
+  }
+  td, th {
+  border: 1px solid gray;
+  text-align: left;
+  padding: 5px;
+  background-color: white;
+  font-size: 10px;
+  }
+  table{
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+  }
+  .articledetails{
+    position: relative;
+    top: 10px;
+    left: 10px;
+  }
+</style>
+
+<body>
+  <span class="whitespace">
+    <div [innerHTML]="article.description"></div>
+  </span>
+  <app-articledetailbox [article]="article"></app-articledetailbox>
+</body>
+

@@ -1,0 +1,158 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+<style>
+  .container {
+      float:left;
+      background-color:Salmon;
+      border-style: solid;
+      border-width: 1px;
+      border-color:black;
+      width: 70%;
+      min-height: 500px;
+      margin-left: 30px;
+      padding:30px;
+  }
+  .whitespace{
+    float:left;
+    background-color: white;
+    width:750px;
+    height:70px;
+    border-color:black;
+    border-style:solid;
+    border-width:1px;
+  }
+  .detailbox{
+    float:left;
+  }
+  .detailbox2{
+    float:left;
+    width: 327px;
+    height: 261px;
+    background-color:Salmon;
+    border-style: solid;
+    border-width: 1px;
+    border-color:black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:16px;
+    text-align:center;
+  }
+  .button{
+    float: left;
+    padding: 5px;
+    margin-top: 4px;
+    background-color: salmon;
+    border-style: solid;
+    border-width: 1.5px;
+    border-color: black;
+    cursor: pointer;
+  }
+  .firstnavbar{
+    float:left;
+    width:100px;
+    background-color:Salmon;
+    height:100px;
+    border-color:black;
+    border-width:1px;
+    border-style:solid;
+  }
+  .secondnavbar{
+    float:left;
+    width:190px;
+    background-color:Salmon;
+    height:100px;
+    border-color:black;
+    border-width:1px;
+    border-style:solid;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  td, th {
+    border: 1px solid gray;
+    text-align: left;
+    padding: 5px;
+    background-color: white;
+    font-size: 10px;
+  }
+  table{
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+  }
+  .approvalbutton{
+    float:left;
+    width: 43.7%;
+    background-color:Salmon;
+    height:40px;
+    border-color:black;
+    border-width:1px;
+    border-style:solid;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .thirdnavbar{
+    float:left;
+    width:800px;
+    background-color:Salmon;
+    height:100px;
+    border-color:black;
+    border-width:1px;
+    border-style:solid;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .superbutton{
+    float:left;
+    width: 100px;
+    background-color:tomato;
+    height:30px;
+    border-color:black;
+    border-width:2px;
+    border-style:solid;
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
+  }
+  .superbutton2{
+    float:left;
+    width: 200px;
+    background-color:tomato;
+    height:30px;
+    border-color:black;
+    border-width:2px;
+    border-style:solid;
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
+  }
+</style>
+
+<body>
+  <nav class="firstnavbar" style="margin-left:40px;">
+    <a [routerLink]="['/userinfo']">
+    <img src="{{user.picture}}" style="width:90px;height:90px;padding:5px;">
+    </a>
+  </nav>
+  <nav class="secondnavbar">
+    <table style="margin-left:10px;margin-top:17px">
+      <tr>
+        <th>User</th>
+        <th>{{user.username}}</th>
+      </tr>
+      <tr>
+        <th>Role</th>
+        <th>{{user.role}}</th>
+      </tr>
+      <tr>
+        <th>Contact</th>
+        <th></th>
+      </tr>
+    </table>
+  </nav>
+  <nav class="thirdnavbar">
+    <br>
+    <div class="whitespace" style="margin-left:10px;">{{changelogtext}}</div>
+  </nav>
+  <div class="approvalbutton" style="margin-left:38px;">
+    <button class="superbutton" style="margin-left:90px; margin-top:4px;" (click)="approve()"><font color="black"><b>approve</b></font></button>
+    <button class="superbutton" style="margin-left:40px; margin-top:4px;" (click)="disapprove()"><font color="black"><b>disapprove</b></font></button>
+  </div>
+  <div *ngIf="exist" class="approvalbutton" style="margin-left:30px;">
+    <button class="superbutton2" style="margin-left:78px; margin-top:4px;" (click)="keepcurrent()"><font color="black"><b>Keep current version</b></font></button>
+  </div>
+  <div style="margin-top:10px;"><app-articlesinglerequest [article]="article"></app-articlesinglerequest></div>
+  
+  <div *ngIf="exist" style="margin-left:-10px;"><app-articlesinglerequest [article]="officialarticle"></app-articlesinglerequest></div>
+</body>

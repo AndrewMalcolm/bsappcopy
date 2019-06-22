@@ -1,0 +1,35 @@
+<style>
+  .testclass{
+    float: right;
+    background-color: lightgray;
+    padding: 3px;
+    border-color: black;
+    border-width: 1px;
+    border-style:solid;
+    width:246px;
+    height:fit-content;
+    min-height: 30px;
+  }
+  .text{
+    text-align: left;
+    font-size: 8px;
+    font-family: Arial, Helvetica, sans-serif;
+    position:relative;
+  }
+</style>
+
+<body>
+  <div class="testclass">
+    <section style="width:17%;float:left;">
+      <img src={{comment.user.picture}} style="width:30px;height:30px;border:0;">
+    </section>
+    <section style="width:60%;">
+      <div class="text">
+        {{comment.time}}<br>
+        <b>{{comment.user.username}}:</b>
+        {{comment.content}}
+      </div>
+    </section>
+    
+  </div>
+</body>

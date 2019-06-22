@@ -1,0 +1,74 @@
+<style>
+    body{
+      position:relative;
+    }
+    .whitespace {
+      float:left;
+      background-color: white;
+      border-style: solid;
+      border-color: gray;
+      border-width: 1px;
+      width: 60%;
+      margin-left: 2%;
+      margin-top: 0%;
+      min-height: 200px;
+    }
+    .helper {
+      float:left;
+      background-color:Salmon;
+      border-style: solid;
+      border-width: 1px;
+      width: 17%;
+      min-height: 200px;
+    }
+    td, th {
+    border: 1px solid gray;
+    text-align: left;
+    padding: 5px;
+    background-color: white;
+    font-size: 10px;
+    }
+    table{
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+    }
+    .articledetails{
+      position: relative;
+      top: 10px;
+      left: 10px;
+    }
+    .box{
+      float:right;
+      width: 250px;
+      height: 60px;
+      border-width:1.5px;
+      border-color:black;
+      border-style:solid;
+      background-color:lightgray;
+      padding: 5px;
+
+    }
+
+    .button{
+      float: right;
+      padding: 5px;
+      margin-top: 4px;
+      background-color: salmon;
+      border-style: solid;
+      border-width: 1.5px;
+      border-color: black;
+      cursor: pointer;
+    }
+  
+    
+</style>
+
+<div class="box">
+  <b>{{article.title}}</b><div class="button">
+      <a [routerLink]="['/view',this.article.bestek,this.article.type,'accepted',this.article.id]">
+      <img src="../assets/images/view.png" alt="view" style="width:20px;height:20px;border:0;" />
+    </a>
+  </div>
+  <br>{{article.bestek}}            {{article.type}}
+  
+</div>

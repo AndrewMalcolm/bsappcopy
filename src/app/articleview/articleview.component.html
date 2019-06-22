@@ -1,0 +1,11 @@
+<head>
+  <style>
+    .nobullets{
+      list-style-type: none;
+    }
+  </style>
+</head>
+
+<li class="nobullets" *ngFor="let article of articlesarray">
+  <app-articlesingleview [article]="article"></app-articlesingleview>
+</li>
