@@ -1,5 +1,8 @@
 # BSapp
 
+This application was developped by Andrew Malcolm as a deliverable for the master's dissertation "Building specification management through Linked data".
+The main functionalities include the connectivity between an angular interface and a GraphDB database, in order to edit and review linked building data.This application connects to a non-existent server, but can the code can be changed in order to connect to an existing server in order for the application to work.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.2.
 
 ## Development server
