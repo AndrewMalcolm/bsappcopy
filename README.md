@@ -7,10 +7,15 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 # TODO
 -Better loading/mounting of the landing page
+
 -Making a local list from a single query instead of querying every single entry once
+
 -Better UI obviously
+
 -Build on Heroku (best to clear asset files first)
+
 -Bugfix the submit/edit buttons so that the full SPARQL query is sent before refreshing the web-app's contents
+
 
 ## Development server
 
